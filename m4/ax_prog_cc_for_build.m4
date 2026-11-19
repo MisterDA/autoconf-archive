@@ -37,7 +37,7 @@
 #   and this notice are preserved. This file is offered as-is, without any
 #   warranty.
 
-#serial 31
+#serial 32
 
 AU_ALIAS([AC_PROG_CC_FOR_BUILD], [AX_PROG_CC_FOR_BUILD])
 AC_DEFUN([AX_PROG_CC_FOR_BUILD], [dnl
@@ -139,6 +139,12 @@ AC_PROG_CPP
 
 BUILD_EXEEXT=$ac_cv_exeext
 BUILD_OBJEXT=$ac_cv_objext
+
+dnl Save the build values, so that config.cache can keep them.
+dnl
+ac_cv_build_exeext=$ac_cv_exeext
+ac_cv_build_objext=$ac_cv_objext
+ac_cv_build_c_compiler_gnu=$ac_cv_c_compiler_gnu
 
 dnl Restore the old definitions
 dnl
