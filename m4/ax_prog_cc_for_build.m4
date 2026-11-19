@@ -32,7 +32,7 @@
 #   and this notice are preserved. This file is offered as-is, without any
 #   warranty.
 
-#serial 26
+#serial 27
 
 AU_ALIAS([AC_PROG_CC_FOR_BUILD], [AX_PROG_CC_FOR_BUILD])
 AC_DEFUN([AX_PROG_CC_FOR_BUILD], [dnl
@@ -104,9 +104,9 @@ AS_VAR_SET_IF([ac_cv_build_c_compiler_gnu],
 
 cross_compiling_build=no
 
+dnl Like ac_tool_prefix, use the alias that the user gave, if any.
 ac_build_tool_prefix=
-AS_IF([test -n "$build"],      [ac_build_tool_prefix="$build-"],
-      [test -n "$build_alias"],[ac_build_tool_prefix="$build_alias-"])
+AS_IF([test -n "$build_alias"], [ac_build_tool_prefix="$build_alias-"])
 
 AC_LANG_PUSH([C])
 AC_PROG_CC
